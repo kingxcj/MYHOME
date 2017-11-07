@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>watch</title>
+		<style type="text/css">
+			body{
+				background-color: #000;
+				margin: 0 ;
+			}
+			canvas{
+				display: block;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="" width="600" height="600"></canvas>
+		<script type="text/javascript">
+			var oC=document.querySelector("canvas");
+			var ctx=oC.getContext('2d');
+			var offset=0-Math.PI/2;
+			setInterval(()=>{
+				ctx.clearRect(0,0,oC.width,oC.height);
+				ctx.lineWidth=25;
+				ctx.lineCap='round';
+				var date=new Date();
+				var oH=date.getHours();
+				var oM=date.getMinutes();
+				var oS=date.getSeconds();
+				var oMs=date.getMilliseconds();
+				ctx.beginPath();
+				ctx.arc(300,300,100,offset,((oS+oMs/1000)/60)*2*Math.PI+offset);
+				ctx.strokeStyle='#7FF0EF';
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.arc(300,300,74,offset,((oM+oS/60)/60)*2*Math.PI+offset);
+				ctx.strokeStyle='#A9FF0A';
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.arc(300,300,50,offset,((oH+oM/60)%12/12)*2*Math.PI+offset);
+				ctx.strokeStyle='#CE1049';
+				ctx.stroke();
+				ctx.fillStyle='white';
+				ctx.fillText(`${addZ(oH)}:${addZ(oM)}:${addZ(oS)}`,300,500);
+				ctx.textAlign='center';
+				ctx.font='50px 黑体';
+			},16)
+			function addZ(num){
+				return num<10? '0'+num:''+num;
+			}
+		</script>
+	</body>
+</html>

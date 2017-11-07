@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>星空</title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+			canvas{
+				display: block;
+				background-color: #000;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="" width="800" height="600"></canvas>
+		<script type="text/javascript">
+			var oC=document.querySelector("canvas");
+			var ctx=oC.getContext('2d');
+			var num=150;
+			var size=8;
+			var arr=[];
+			var dis=60;
+			var {clientWidth,clientHeight}=document.documentElement;
+			oC.width=clientWidth;
+			oC.height=clientHeight;
+			for(var i=0;i<num;i++){
+				var data={
+					x:rnd(size,oC.width-size),
+					y:rnd(size,oC.height-size),
+					speedX:M()*rnd(4,7)*rnd(1,4),
+					speedY:M()*rnd(1,3)*2,
+					r:rnd(1,3)
+				}
+				arr.push(data);
+			};
+			setInterval(()=>{
+				ctx.clearRect(0,0,oC.width,oC.height);
+				arr.forEach((ele,index)=>{
+					
+					var {x,y,speedX,speedY,r}=ele;
+					ctx.beginPath();
+					ctx.fillStyle=`rgb(${rnd(0,256)},${rnd(0,256)},${rnd(0,256)})`;
+					
+					
+					ctx.arc(x,y,r,0,2*Math.PI);
+					ctx.fill();
+					
+					if(x<0||x>clientWidth){
+						ele.speedX*=-1;
+					}
+					if(y<0||y>clientHeight){
+						ele.speedY*=-1;
+					}
+					ele.x+=ele.speedX;
+					ele.y+=ele.speedY;
+					for(var i=index+1;i<arr.length;i++){
+						var delta=Math.sqrt(
+							Math.pow(ele.x-arr[i].x,2)+Math.pow(ele.y-arr[i].y,2)
+						);
+						if(delta<dis){
+							ctx.beginPath();
+							ctx.moveTo(ele.x,ele.y);
+							ctx.lineTo(arr[i].x,arr[i].y);
+							ctx.strokeStyle=`rgba(${
+								rnd(0,256)
+							},${
+								rnd(255,256)
+							},${
+							rnd(0,256)
+							},${
+							1-delta/dis
+							})`;
+							ctx.stroke();
+						}
+					}
+				});
+				
+			},40)
+			
+			
+			function rnd(n,m){
+				return parseInt(Math.random()*(m-n)+n);
+			}
+			function M(){
+				return Math.random()>0.5 ?1:-1;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,429 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: #fff;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
+	padding-bottom: 22px;
+	margin: 0px;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 85px 0 63px;
+	box-sizing: border-box;
+	min-width: 977px;
+	overflow: hidden;
+}
+
+.heading {
+	width: 100%;
+	margin-bottom: 45px;
+	text-align: center;
+}
+
+
+/*-----------------导航条 -----------------------*/
+
+#bar {
+	width: 100%;
+	height: 62px;
+	background-color: #262b37;
+	position: relative;
+	top: 0;
+	z-index: 1000;
+}
+
+.menu {
+	width: 100%;
+	height: 62px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.menu li {
+	height: 62px font-size: 14px;
+	flex: 1;
+	text-align: center;
+	position: relative;
+}
+
+.menu li a {
+	color: #999;
+	display: block;
+	height: 62px;
+	width: 100%;
+	line-height: 62px;
+}
+
+.menu li a:hover {
+	color: #fff;
+}
+
+.menu li a.active {
+	background-color: #1b1f29;
+	color: #fff;
+}
+
+
+/*-----------------欢迎页 -----------------------*/
+
+#home {
+	width: 100%;
+	margin: 0 auto;
+	color: #fff;
+	position: relative;
+	background: url(../img/b6.jpg) no-repeat;
+	background-size:cover;
+}
+
+#banner {
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 1999;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+}
+
+.bannerText {
+	box-sizing: border-box;
+	position: absolute;
+	margin-left: -480px;
+	left: 50%;
+	top: 30%;
+	text-align: center;
+	padding: 30px 0 30px;
+	width: 960px;
+	border: 1px solid #fff;
+	background: rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 38px;
+	z-index: 8000;
+	border-radius: 10px;
+}
+
+.cb-slideshow li span {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-size: cover;
+	background-position: 50% 40%;
+	background-repeat: none;
+	opacity: 0;
+	z-index: 0;
+	-webkit-animation: imageAnimation 30s linear infinite 0s;
+}
+
+
+/*-----------------------------------------
+	Slid Show image part
+-----------------------------------------*/
+
+.cb-slideshow li:nth-child(1) span {
+	background-image: url(../img/b3.jpg);
+}
+
+.cb-slideshow li:nth-child(2) span {
+	background-image: url(../img/b2.jpg);
+	-webkit-animation-delay: 10s;
+}
+
+.cb-slideshow li:nth-child(3) span {
+	background-image: url(../img/b7.jpg);
+	-webkit-animation-delay: 20s;
+}
+
+
+/* Animation for the slideshow images */
+
+@-webkit-keyframes imageAnimation {
+	0% {
+		opacity: 0;
+		-webkit-animation-timing-function: ease-in;
+	}
+	8% {
+		opacity: 1;
+		-webkit-animation-timing-function: ease-out;
+	}
+	42% {
+		opacity: 1
+	}
+	50% {
+		opacity: 0
+	}
+	100% {
+		opacity: 0
+	}
+}
+
+
+/*-----------------关于我 -----------------------*/
+
+#about {
+	width: 100%;
+	background-color: #00bdbd;
+	margin: 0 auto;
+	color: white;
+}
+
+#about .container {
+	overflow: hidden;
+}
+
+.aboutme {
+	width: 58%;
+	height: 348px;
+	float: left;
+	margin-left: 50px;
+}
+
+#about h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 36px;
+	line-height: 38px;
+	padding-bottom: 0px;
+	font-weight: 300;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+#about p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: 400;
+}
+
+#about h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 36px;
+	line-height: 30px;
+	padding-bottom: 6px;
+	font-weight: 400;
+	margin: 0;
+}
+
+#about .photo {
+	width: 300px;
+	height: 300px;
+	float: left;
+	border: 5px solid white;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-left: 40px;
+}
+
+.photo img {
+	width: 100%;
+	height: 100%
+}
+
+
+/*-----------------专业技能 -----------------------*/
+
+#skills {
+	width: 100%;
+	background-color: #eee;
+	margin: 0 auto;
+	color: #ff675f;
+}
+
+#skills h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 36px;
+	line-height: 38px;
+	padding-bottom: 0px;
+	font-weight: 300;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.skill {
+	height: 548px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.skill div {
+	width: 33%;
+	float: left;
+	margin-bottom: 40px;
+}
+
+.skill canvas {
+	background-image: url(../img/skills.png);
+	background-repeat: no-repeat;
+}
+
+.skill h4 {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 19px;
+	padding: 26px 0;
+	margin: 0;
+	color: black;
+}
+
+
+/*-----------------案例 -----------------------*/
+
+#portfolio {
+	width: 100%;
+	background-color: #2bb3dd;
+	margin: 0 auto;
+	overflow: hidden;
+	color: white;
+}
+
+#portfolio h2 {
+	font-size: 36px;
+	line-height: 38px;
+	padding-bottom: 0px;
+	font-weight: 300;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.portfolioFilter {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.portfolioFilter ul {
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	margin-bottom: 30px;
+}
+
+.portfolioFilter ul li {
+	display: inline-block;
+	margin: 5px 5px;
+}
+
+.portfolioFilter ul li a:hover {
+	border: solid 1px #15596e;
+	color: #15596e;
+	transition-duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+}
+
+.portfolioFilter ul li a {
+	padding: 16px 18px;
+	font-size: 13px;
+	line-height: 15px;
+	color: #ffffff;
+	text-transform: uppercase;
+	display: block;
+	text-decoration: none;
+	border: solid 1px #95d9ee;
+	transition-duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+	cursor: pointer;
+}
+
+.portfolioFilter ul li a.current {
+	background: #15596e;
+	border: solid 1px #15596e;
+	color: #fff;
+}
+
+.portfolioContainer{
+	width: 870px;
+	height: 600px;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}
+.portfolioContainer .all{
+	float: left;
+	background: blue;
+	margin: 10px;
+	width: 150px;
+	height: 150px;
+	transition: .8s;
+	transform: scale(1);
+	color: white;
+	font-size:50px ;
+	text-align: center;
+	line-height: 150px;
+	border-radius: 10px;
+	position: relative;
+}
+.portfolioContainer .all img{
+	width: 150px;
+	height: 150px;
+	border-radius: 10px;
+}
+.portfolioContainer .all .mo{
+	width: 100%;
+	height: 100%;
+	background: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 10px;
+	opacity: 0;
+	font-size: 16px;
+	vertical-align: bottom;
+	transition: .3s;
+}
+.portfolioContainer .all:hover .mo{
+	opacity: 0.6;
+}
+/*-----------------联系方式 -----------------------*/
+
+#contact {
+	width: 100%;
+	background-color: #474d5d;
+	;
+	margin: 0 auto;
+}
+
+#contact h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 36px;
+	line-height: 38px;
+	padding-bottom: 0px;
+	font-weight: 300;
+	text-transform: uppercase;
+	margin: 0;
+}
+#contact p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: 400;
+}
+#contact .foot{
+	width: 100%;
+	text-align: center;
+	margin-top: 150px;
+}

@@ -1,0 +1,246 @@
+html{
+	font-size: 100px;
+}
+
+body{
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #f3f3f3;
+	font-size: 0.16rem;
+}
+
+ul,li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.slider{
+	width: 3.2rem;
+	height: 1.43rem;
+	overflow: hidden;
+	position: relative;
+	z-index: 10;
+}
+
+.slider > ul{
+	font-size: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 25.60rem;
+	transform: translateX(-3.2rem);
+}
+
+.slider > ul > li{
+	width: 3.20rem;
+	height: 2rem;
+	font-size: 0.3rem;
+	text-align: center;
+	line-height: 2rem;
+	float: left;
+}
+
+.slider > ul > li > img{
+	width: 100%;
+}
+/*header*/
+header{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 3.2rem;
+	height: 0.4rem;
+	display: flex;
+	align-items: center;
+	background-color: #c91523;
+	z-index: 100;
+}
+
+.logo > img{
+	height: 0.3rem;
+}
+
+.search-bar{
+	flex:1;
+	height: 0.3rem;
+	background-color: white;
+	border-radius: 0.18rem;
+	padding-left: 0.15rem;
+	position: relative;
+}
+
+.search-bar > input{
+	width: 80%;
+	height: 80%;
+	outline: none;
+}
+
+.login{
+	color: white;
+	margin: 0 0.1rem;
+}
+
+/*slider*/
+.slider{
+	width: 3.2rem;
+}
+
+.slider > img{
+	width: 100%;
+}
+
+
+/*enterances*/
+.enterances{
+	display: flex;
+	flex-wrap: wrap;
+	width: 3.2rem;
+}
+
+.enterance{
+	flex:1;
+	min-width: 0.64rem;
+	display: flex;
+	flex-direction:column;
+	align-items: center;
+	margin-top: 0.1rem;
+}
+
+.enterance > img{
+	width: 60%;
+}
+
+.enterance > span{
+	font-size: 0.14rem;
+	margin: 0.02rem;
+}
+
+
+/*quick-news*/
+.quick-news{
+	width: 2.88rem;
+	margin: 0.1rem 0;
+	height: 0.3rem;
+	display: flex;
+	align-items: center;
+	padding: 0.02rem 0.08rem;
+	box-sizing: border-box;
+	border-radius: 0.04rem;
+	background-color: white;
+}
+
+.quick-news > img{
+	height: 50%;
+}
+
+.quick-news  a {
+	color: black;
+	text-decoration: none;
+	font-size: 0.14rem;
+}
+
+.quick-news > .message{
+	flex:1;
+	font-size: 0.12rem;
+}
+
+
+/*activities*/
+.activities{
+	display: flex;
+	width: 3.2rem;
+}
+
+.activity{
+	flex:1;
+	padding: 0.04rem;
+	display: flex;
+	background-color: white;
+}
+
+.activity > .right{
+	width: 0.8rem;
+}
+
+.activity > .right > img{
+	width: 100%;
+}
+
+.activity > .left{
+	flex:1;
+	display: flex;
+	flex-direction: column;
+}
+
+.activity > .left > .desc{
+	font-size: 0.12rem;
+	color: grey;
+}
+
+
+/*ad*/
+.ad{
+	width: 3.2rem;
+	display: flex;
+	font-size: 0;
+	overflow: hidden;
+}
+
+.ad > .left{
+	flex:1;
+	padding: 0.02rem;
+}
+
+.ad > .left > img{
+	width: 100%;
+}
+
+.ad > .right{
+	flex: 1;
+	padding-top: 0.01rem;
+}
+
+.ad > .right > img{
+	width: 100%;
+	margin: 0.01rem;
+}
+
+
+/*product-recommend*/
+.product-recommend{
+	width: 3.2rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.product{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-width: 1.6rem;
+}
+
+.product > img{
+	width: 100%;
+}
+
+.product > .bottom{
+	display: flex;
+	justify-content: space-between;
+	padding: 0.04rem;
+}
+
+.product > .bottom > div{
+	padding: 0.02rem;
+	border:1px solid black;
+	border-radius: 0.04rem;
+	font-size: 0.12rem;
+
+}
+
+.product > .bottom > span{
+	color: red	
+}

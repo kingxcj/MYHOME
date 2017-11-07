@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>移动小人</title>
+		<style type="text/css">
+			body{
+				background-color: black;
+			}
+			canvas{
+				display: block;
+				background-color: white;
+				margin: 0 auto;
+			}
+			h1{
+				color: white;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>按下键盘上下左右移动小人</h1>
+		<canvas id="" width="1200" height="600"></canvas>
+		<script type="text/javascript">
+			var oC=document.querySelector('canvas');
+			var ctx=oC.getContext('2d');
+			var oImage=new Image();
+			var l=t=r=b=false;
+			var index=0;
+			var iNow=0;
+			var iLeft=0;
+			var iTop=0;
+			var timer=null;
+			oImage.onload=function(){
+				setInterval(function(){
+					ctx.clearRect(0,0,oC.width,oC.height);
+					ctx.save();
+					ctx.drawImage(oImage,
+					index*96,iNow*96,96,96,
+					iLeft,iTop,96,96);
+					ctx.restore();
+					index++
+					if(index==3){
+						index=0
+					}
+				},60)
+				
+			};
+			oImage.src='2d-2.png';
+			document.onkeydown=function({key}){
+				switch(key){
+					case 'ArrowLeft':
+					iNow=1;
+					l=true;
+					alert(1);
+					break;
+					case 'ArrowRight':
+					iNow=2;
+					r=true;
+					break;
+					case 'ArrowUp':
+					iNow=3;
+					t=true;
+					break;
+					case 'ArrowDown':
+					iNow=0;
+					b=true;
+					break;
+				}
+			}
+			document.onkeyup=function({key}){
+				switch(key){
+					case 'ArrowLeft':
+						l=false;
+					break;
+					case 'ArrowRight':
+						r=false;
+					break;
+					case 'ArrowUp':
+						t=false;
+					break;
+					case 'ArrowDown':
+						b=false;
+					break;
+				}
+			}
+			timer=setInterval(function(){
+				if(l)iLeft-=5;;
+		
+				if(t)iTop-=5;;
+				
+				if(r)iLeft+=5;;
+				
+				if(b)iTop+=5;;
+			},10)
+		</script>
+	</body>
+</html>

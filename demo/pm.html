@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>倒计时</title>
+		<style>
+			.box{
+				width: 200px;
+				height: 400px;
+				position: relative;
+				margin: 50px,auto;
+			}
+			.img{
+				height: 200px;
+				background: cornflowerblue;
+				font-size: 16px;
+				line-height: 200px;
+				text-align: center;
+			}
+			div.class{
+				font-size: 14px;
+				text-align: center;
+			}
+			span{
+				font-size: 10px;
+				color: #ccc;
+				margin-left: 15px;
+			}
+			b{
+				font-size: 15px;
+				color: #f28;
+				margin-left: 5px;
+			}
+			.tag{
+				position: absolute;
+				right:10px;
+				top:10px;
+				border-radius: 8px;
+				background: orange;
+				color:#fff;
+				font-size: 12px;
+				text-align: center;
+				width: 60px;
+				height: 20px;
+				line-height: 20px;
+			}
+		</style>
+		<script>				
+			var timer=null;
+			function toDou(num){
+					return num<10?'0'+num:''+num;
+				}
+			function clock(name,mum,fn){
+				function time(){
+					var im=parseInt(mum/60);
+					var is=mum%60;
+					if(mum>0){
+						mum--;
+					}
+					if(mum>=59){
+						name.innerHTML=toDou(im)+'分'+':'+toDou(is)+'秒';	
+					}
+					if(mum<59){
+						name.innerHTML=toDou(is)+'秒';
+					}
+					if(mum<=0){
+						name.innerHTML='0'+'秒';
+						clearInterval(timer);
+						fn();
+					}
+				}
+				time();
+				timer=setInterval(time,1000);
+			}
+			window.onload=function(){
+				var oDiv=document.getElementById('tag');
+				var oSp=document.getElementsByTagName('span')[0];
+				var oB=document.getElementsByTagName('b')[0];
+
+				clock(oB,120,clk1);
+				function clk1(){
+					oDiv.style.background='red';
+					oDiv.innerHTML='开始拍卖';
+					oSp.innerHTML='剩余时间：';
+					clock(oB,1800,clk2);
+				}
+				function clk2(){
+					oDiv.style.background='#ccc';
+					oDiv.innerHTML='拍卖结束';
+					oSp.innerHTML='开始时间：'
+					oB.innerHTML='';
+				}		
+			};
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div id="tag" class="tag">即将拍卖</div>
+			<div class="img">图片</div>
+			<div class="class">好多多好多多好多多好多多</div>
+			<div><span>距离开始:</span><b> </b></div>
+		</div>
+	</body>
+</html>
